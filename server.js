@@ -53,7 +53,7 @@ app.use(session({
     key: 'sid',
     cookie: {
         maxAge: 60000,
-        secure: false
+        secure: true
     }
     
   }));
