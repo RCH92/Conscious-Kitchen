@@ -9,6 +9,12 @@ var bodyParser = require('body-parser')
 // var flash = require('connect-flash');
 
 //#####could not get this working#####
+// Imports the Google Cloud client library
+const vision = require('@google-cloud/vision');
+
+// Creates a client
+const client = new vision.ImageAnnotatorClient();
+
 
 
 // sequelize
