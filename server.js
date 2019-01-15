@@ -37,7 +37,7 @@ app.use(expressLayouts);
 app.set('view engine', 'ejs');
 
 // body parser
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 // app.use(bodyParser.urlencoded({
 //     extended: true
 // }));
