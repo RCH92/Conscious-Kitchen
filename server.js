@@ -37,7 +37,7 @@ app.use(expressLayouts);
 app.set('view engine', 'ejs');
 
 // body parser
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 // app.use(bodyParser.urlencoded({
 //     extended: true
 // }));
@@ -67,7 +67,7 @@ app.use(passport.session());
 //#####could not get this working#####
 
 app.use(express.json());
-app.use('/public', express.static('./public'));
+app.use('/public', express.static('./'));
 app.use('/jquery', express.static('node_modules/jquery/dist'));
 app.use('/whatInput', express.static('node_modules/what-input/dist'));
 app.use('/foundation', express.static('node_modules/foundation-sites/dist'));
