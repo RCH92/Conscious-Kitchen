@@ -72,16 +72,7 @@ app.use('/jquery', express.static('node_modules/jquery/dist'));
 app.use('/whatInput', express.static('node_modules/what-input/dist'));
 app.use('/foundation', express.static('node_modules/foundation-sites/dist'));
 
-if(process.env.JAWSDB_URL) {
-    conndection = mysql.createConnection(process.env.JAWSDB_URL);
-}else {
-    connection = mysql.createconnection({
-        host: 'localhost',
-        user: 'root',
-        password: 'root',
-        database: 'CK_DB'
-    });
-};
+
 // app.use((req, res, next) => {
 //     res.locals.success_msg = req.flash('success_msg');
 //     res.locals.error_msg = req.flash('error_msg');
