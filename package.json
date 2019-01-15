@@ -4,8 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "gulp",
-    "watch": "gulp sass"
+    "start": "node server.js"
+    
     
   },
   "dependencies": {
