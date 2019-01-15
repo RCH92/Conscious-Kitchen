@@ -1,5 +1,7 @@
 .top-bar{
     // width: rem-calc(1200);
+    margin-bottom: 20px;
+    border-bottom: 1px $dark-gray solid;
     a{
         padding: 0.3rem 0.4rem;
     }
@@ -18,7 +20,7 @@ $login-box-radius: $global-radius;
 $login-box-bg: $white;
 $login-box-shadow: 0 2px 4px rgba($black, 0.4);
 $login-box-inner-padding: 2.5rem;
-$login-box-social-bg: url('https://images.pexels.com/photos/179124/pexels-photo-179124.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb');
+$login-box-social-bg: url('https://media.glassdoor.com/l/6d/3f/0b/53/fresh-produce.jpg');
 $social-brand-facebook: #3b5998;
 $social-brand-twitter: #55acee;
 $social-brand-linkedin: #007bb5;
@@ -42,9 +44,10 @@ $social-brand-tumblr: #32506d;
     font-size: 1.275rem;
     background: $medium-gray;
     box-shadow: $login-box-shadow;
+    top: auto;
 
     @include breakpoint(small only) {
-      top: 85%;
+      // top: 85%;
     }
   }
 }
@@ -62,9 +65,9 @@ $social-brand-tumblr: #32506d;
   padding: $login-box-inner-padding;
 
 }
-
+$img1: url('https://gilesfarms.com/wp-content/uploads/2017/09/how-it-works-h.jpg');
 .login-box-social-section {
-  background: $login-box-social-bg;
+  background: $img1;
   background-size: cover;
   background-position: center;
 }
@@ -135,6 +138,8 @@ $social-brand-tumblr: #32506d;
   font-size: 1.875rem;
   color: $white;
   text-align: center;
+  // background:$medium-gray;
+  font-weight: bolder;
 
 }
 
@@ -146,6 +151,54 @@ $social-brand-tumblr: #32506d;
   
 }
 .wrapper{
-  max-width: 1200px;
+  max-width: 800px;
   margin: auto;
+}
+body{
+  background-image: url('https://c.pxhere.com/photos/28/59/background_food_tasty_olives_wooden_background_cooking_plate_kitchen-1369805.jpg!d');
+  background-size: cover;
+  background-position: center;
+}
+.fancy{
+  text-align: center;
+  font-family: 'Pacifico', cursive;
+   
+}
+.barcode{
+  font-family: 'Libre Barcode 128 Text', cursive;
+  font-size: 3rem;
+}
+.bigWrapper{
+  max-width: 1200px;
+  background: $light-gray;
+  width:100%;
+  margin:auto;
+  margin-top: -20px;
+  text-align: center;
+  border-left: 2px black solid;
+  border-right: 2px black solid;
+  
+
+  height: unset;
+ .classy{
+  font-family: 'Times New Roman', Times, serif;text-align: center;
+ }
+ #regcode{
+  font-family: 'Libre Barcode 128 Text', cursive;
+  font-size: 2rem;
+  bottom: 0;
+ }
+}
+.container{
+  display: flex;
+  justify-items: center;
+  flex-direction: column;
+}
+
+.orbit-slide{
+  img{
+    height: 800px;
+    width: 1198px;
+  }
+  
 }

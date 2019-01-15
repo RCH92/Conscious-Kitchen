@@ -1,6 +1,6 @@
-
-var db = require("../models");
 var passport = require('passport');
+var db = require("../models");
+
 var bcrypt = require('bcryptjs');
 var user= {};
 // routes
@@ -100,10 +100,14 @@ app.post("/user/register", function(req, res) {
     };
   });
   app.post('/user/signin', (req, res, next) => {
-    passport.authenticate('local', {
+      console.log("trying to auth")
+    passport.authenticate('local-signin', {
         successRedirect: '/dashboard',
-        failureRedirect: "/user/login",
+        failureRedirect: '/login',
         failureFlash: false
     })(req, res, next)
+    
+   
+    console.log("NEXT :" + res.msg);
   });
 }

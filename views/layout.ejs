@@ -9,7 +9,9 @@
     <link rel="stylesheet" type="text/css" media="screen" href="/public/public/css/app.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
         crossorigin="anonymous">
-    <script src="/jquery/jquery.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+128+Text" rel="stylesheet">
+        <script src="/jquery/jquery.js"></script>
 </head>
 <body>
     
@@ -52,7 +54,7 @@
                      <div class="login-box-form-section or-adjust">
                             <span class="grid-x">
                        <h1 class="login-box-title">Sign in</h1><% include ./partials/err_messages %></span>
-                       <form action="/user/signin" method="post">
+                       <form action="/user/signin" method="POST">
                        <input class="login-box-input" type="text" name="name" placeholder="Username" />
                        <input class="login-box-input" type="password" name="password" placeholder="Password" />
                        <input class="login-box-submit-button" id="sign-in-submit" type="submit" name="signin_submit" value="Sign in" />
@@ -79,12 +81,15 @@
 
         <div class="cell medium-4 large-4">
             <ul class="menu">
-                <li><a href="/">Home</a></li>
-                <li><a href="/">About</a></li>
+                <li class="barcode"><a href="/">Home</a></li>
+                <li class="barcode"><a href="/">About</a></li>
             </ul>
         </div>
         <div class="cell medium-4 large-4">
-            <h3 class="">Conscious Kitchen</h3>
+          <div class="grid-y">
+            <h3 class="cell">Conscious Kitchen</h3>
+            <h5 class="fancy"><i>"From farm to server!"</i></h5>
+          </div>
         </div>
         <div class="cell medium-4 large-4">
             <ul class="menu align-right">
@@ -95,7 +100,7 @@
     </div>   
     
     
-    <div class="container">
+    <div class="container clearfix">
         <%- body %>
     </div>
 

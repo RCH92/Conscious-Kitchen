@@ -1,18 +1,21 @@
 
+var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
-var express = require("express");
 var bcrypt = require('bcryptjs');
-var db = require("../models/register");
 
-// var db = require('../models');
+
+var db = require('../models/register.js');
 
 module.exports = function(passport) {
-    passport.use(
+    passport.use("local-signin", 
         new LocalStrategy((username, password, done) =>{
             // finding user
+            console.log("in step 1")
             db.User.findOne({ where: { username: username  } })
             .then(function(dbuser) {
+                console.log('in step 2')
                 if(!dbuser){
+                    console.log("user not found!!!!!!!!!!!!!!!!!!!!!!")
                     return done(null, false, {message: "user not found!"});
                 }
                 // match passwords
@@ -22,6 +25,7 @@ module.exports = function(passport) {
                     if(isMatch){
                         return done(null, dbuser);
                     }else{
+                        console.log("password wrong!!!!!!!!!!!!!!!!!!!!!!");
                         return done(null, false, {message: "Incorrect password"}); 
                     }
                 });

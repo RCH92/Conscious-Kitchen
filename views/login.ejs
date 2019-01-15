@@ -1,38 +1,34 @@
-<div class="wrapper" id="signin-modal" data-modal="true">
-        <div class="reveal" id="log-in-modal2" data-reveal>
-                <div class="login-box">
-                 <div class="row collapse expanded">
-                   <div class="small-12 medium-6 column small-order-2 medium-order-1">
-                     <div class="login-box-form-section or-adjust">
-                            <span class="grid-x">
-                       <h1 class="login-box-title">Sign in</h1>
-                       <% include ./partials/err_messages %>
-                       <input class="login-box-input" type="text" name="name" placeholder="Username" />
-                       <input class="login-box-input" type="password" name="password" placeholder="Password" />
-                       <input class="login-box-submit-button" id="sign-in-submit" type="submit" name="signin_submit" value="Sign in" />
-                       <p>Not a member? <a class="register" data-open="register-modal">register</a></p>
-                     </div>
-                     <div class="or">OR</div>
-                   </div>
-                   <div class="small-12 medium-6 column small-order-1 medium-order-2 login-box-social-section">
-                     <div class="login-box-social-section-inner">
-                       <span class="login-box-social-headline">Sign in with<br />your social network<br /> (not yet implemented!)</span>
-                       <a class="login-box-social-button-facebook">Log in with facebook</a>
-                       <a class="login-box-social-button-twitter">Log in with Twitter</a>
-                       <a class="login-box-social-button-google">Log in with Google+</a>
-                     </div>
-                   </div>
-                 </div>
-               </div> 
-        
+<div class="wrapper">
+<div class="login-box">
+  <div class="row collapse expanded">
+    <div class="small-12 medium-6 column small-order-2 medium-order-1">
+      <div class="login-box-form-section or-adjust">
+             <span class="grid-x">
+        <h1 class="login-box-title">Sign in</h1><% include ./partials/err_messages %></span>
+        <form action="/user/signin" method="POST">
+        <input class="login-box-input" type="text" name="name" placeholder="Username" />
+        <input class="login-box-input" type="password" name="password" placeholder="Password" />
+        <input class="login-box-submit-button" id="sign-in-submit" type="submit" name="signin_submit" value="Sign in" />
+        </form>
+        <p>Not a member? <a class="register" data-open="register-modal">register</a></p>
+      </div>
+      <div class="or">OR</div>
+    </div>
+    
+    <div class="small-12 medium-6 column small-order-1 medium-order-2 login-box-social-section">
+      <div class="backgroundHack">
+      <div class="login-box-social-section-inner">
+        <span class="login-box-social-headline">Sign in with<br />your social network<br /> (not yet implemented!)</span>
+        <a class="login-box-social-button-facebook">Log in with facebook</a>
+        <a class="login-box-social-button-twitter">Log in with Twitter</a>
+        <a class="login-box-social-button-google">Log in with Google+</a>
+      </div>
+    </div>
+  </div>
+  </div>
+</div> 
+</div>        
 </div>
 <script>
-$(document).ready(function(){
-       
-        if($('#signin-modal').data().modal === true){
-            
-            $('#log-in-modal2').foundation('open');
-          
-        }
-        });
+
 </script>

@@ -11,16 +11,16 @@ var bodyParser = require('body-parser')
 //#####could not get this working#####
 
 
-
-
+// sequelize
+var db = require('./models');
 // passport config
-require('./config/passport')(passport);
+require('./config/passport.js')(passport, db);
 
 // define a port
 var PORT = process.env.PORT || 8080;
 
-// sequelize
-var db = require('./models');
+
+
 
 
 // EJS
@@ -31,11 +31,11 @@ app.use(expressLayouts);
 app.set('view engine', 'ejs');
 
 // body parser
-// app.use(express.urlencoded({ extended: false }));
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
-app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: false }));
+// app.use(bodyParser.urlencoded({
+//     extended: true
+// }));
+// app.use(bodyParser.json());
 
  
   //#####could not get this working#####
@@ -60,7 +60,7 @@ app.use(passport.session());
 
 //#####could not get this working#####
 
-// app.use(express.json());
+app.use(express.json());
 app.use('/public', express.static('./'));
 app.use('/jquery', express.static('node_modules/jquery/dist'));
 app.use('/whatInput', express.static('node_modules/what-input/dist'));
@@ -77,7 +77,7 @@ app.use('/foundation', express.static('node_modules/foundation-sites/dist'));
 // Routes
 // ====================================================================
 require("./routes/api-routes.js")(app);
-require("./routes/users.js")(app, passport);
+require("./routes/users.js")(app,passport);
 app.use('/', require('./routes/html-routes'));
 // require("./routes/html-routes.js")(app);
 // ====================================================================
