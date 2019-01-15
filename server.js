@@ -45,7 +45,7 @@ app.use(express.urlencoded({ extended: false }));
 
  
   //#####could not get this working#####
-app.set('trust proxy', 1);
+// app.set('trust proxy', 1);
 app.use(session({
     secret: 'secret',
     resave: true,
