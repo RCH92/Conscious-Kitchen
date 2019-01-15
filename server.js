@@ -10,10 +10,10 @@ var bodyParser = require('body-parser')
 
 //#####could not get this working#####
 // Imports the Google Cloud client library
-const vision = require('@google-cloud/vision');
+// const vision = require('@google-cloud/vision');
 
 // Creates a client
-const client = new vision.ImageAnnotatorClient();
+// const client = new vision.ImageAnnotatorClient();
 
 
 
