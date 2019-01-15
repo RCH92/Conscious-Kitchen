@@ -1,0 +1,7 @@
+<% if(typeof errors != 'undefined') { %>
+    <% errors.forEach(function(error) { %>
+        <p class="callout warning login-err">
+            <%= error.msg %>
+        </p>
+    <% }); %>
+<% } %>

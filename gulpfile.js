@@ -24,11 +24,11 @@ function sass() {
 
 function serve() {
   browserSync.init({
-    server: "./public/"
+    server: "server.js"
   });
 
   gulp.watch("public/scss/*.scss", sass);
-  gulp.watch("public/*.html").on('change', browserSync.reload);
+  gulp.watch("views/*.ejs").on('change', browserSync.reload);
 }
 
 gulp.task('sass', sass);

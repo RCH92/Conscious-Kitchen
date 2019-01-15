@@ -1,0 +1,28 @@
+<% if(msg != '') { %>
+    <% if(type === 'success') { %>
+        <p class="callout success login-err"><%= msg %></p>
+    <% } %>
+
+    <% if(type === 'fail') { %>
+        <p class="callout warning login-err"><%= msg %></p>
+    <% } %>
+
+
+    <%# if(success_msg != '') { %>
+    <!-- <div class="callout success register_success" data-closable>
+        <%# success_msg %>
+        <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div> -->
+
+<% } %>
+<%# if(error_msg != '') { %>
+    <!-- <div class="callout warning register_success" data-closable>
+        <%# error_msg %>
+        <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div> -->
+
+<%# } %>

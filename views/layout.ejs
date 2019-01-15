@@ -1,0 +1,136 @@
+<!DOCTYPE <!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Conscious Kitchen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="screen" href="/public/public/css/app.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+        crossorigin="anonymous">
+    <script src="/jquery/jquery.js"></script>
+</head>
+<body>
+    
+    <div class="reveal open" id="register-modal" data-reveal >
+           <div class="login-box" id="login-modal" data-modal="<%= typeof modal != 'undefined' ? modal : '' %>">
+            <div class="row collapse expanded">
+              <div class="small-12 medium-6 column small-order-2 medium-order-1">
+                <div class="login-box-form-section">
+                    <span class="grid-x">
+                  <h1 class="login-box-title clearfix">Sign up</h1><% include ./partials/err_messages %></span>
+                    <form action="/user/register" method="POST">
+                  <input class="login-box-input" type="text" name="name" placeholder="Username" value="<%= typeof name != 'undefined' ? name : '' %>"/>
+                  <input class="login-box-input" type="email" name="email" placeholder="E-mail" value="<%= typeof email != 'undefined' ? email : '' %>"/>
+                  <input class="login-box-input" type="password" name="password" placeholder="Password" value="<%= typeof password != 'undefined' ? password : '' %>"/>
+                  <input class="login-box-input" type="password" name="password2" placeholder="Retype password" value="<%= typeof password2 != 'undefined' ? password2 : '' %>"/>
+                  <input class="login-box-submit-button" type="submit" name="signup_submit" value="Sign me up" />
+                </form>
+                  <p>Have an account? <a class="sign-in" data-open="log-in-modal">sign in</a></p>
+                </div>
+                <div class="or">OR</div>
+              </div>
+              <div class="small-12 medium-6 column small-order-1 medium-order-2 login-box-social-section">
+                <div class="login-box-social-section-inner">
+                  <span class="login-box-social-headline">Sign in with<br />your social network<br /> (not yet implemented!)</span>
+                  <a class="login-box-social-button-facebook">Log in with facebook</a>
+                  <a class="login-box-social-button-twitter">Log in with Twitter</a>
+                  <a class="login-box-social-button-google">Log in with Google+</a>
+                </div>
+              </div>
+            </div>
+          </div> 
+            <button class="close-button" data-close aria-label="Close modal" type="button">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="reveal" id="log-in-modal" data-reveal>
+                <div class="login-box">
+                 <div class="row collapse expanded">
+                   <div class="small-12 medium-6 column small-order-2 medium-order-1">
+                     <div class="login-box-form-section or-adjust">
+                            <span class="grid-x">
+                       <h1 class="login-box-title">Sign in</h1><% include ./partials/err_messages %></span>
+                       <form action="/user/signin" method="post">
+                       <input class="login-box-input" type="text" name="name" placeholder="Username" />
+                       <input class="login-box-input" type="password" name="password" placeholder="Password" />
+                       <input class="login-box-submit-button" id="sign-in-submit" type="submit" name="signin_submit" value="Sign in" />
+                       </form>
+                       <p>Not a member? <a class="register" data-open="register-modal">register</a></p>
+                     </div>
+                     <div class="or">OR</div>
+                   </div>
+                   <div class="small-12 medium-6 column small-order-1 medium-order-2 login-box-social-section">
+                     <div class="login-box-social-section-inner">
+                       <span class="login-box-social-headline">Sign in with<br />your social network<br /> (not yet implemented!)</span>
+                       <a class="login-box-social-button-facebook">Log in with facebook</a>
+                       <a class="login-box-social-button-twitter">Log in with Twitter</a>
+                       <a class="login-box-social-button-google">Log in with Google+</a>
+                     </div>
+                   </div>
+                 </div>
+               </div> 
+                 <button class="close-button" data-close aria-label="Close modal" type="button">
+                   <span aria-hidden="true">&times;</span>
+                 </button>
+               </div>
+    <div class="grid-x top-bar">
+
+        <div class="cell medium-4 large-4">
+            <ul class="menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/">About</a></li>
+            </ul>
+        </div>
+        <div class="cell medium-4 large-4">
+            <h3 class="">Conscious Kitchen</h3>
+        </div>
+        <div class="cell medium-4 large-4">
+            <ul class="menu align-right">
+                <li><button class="button" data-open="register-modal">Sign up</button></li>
+                <li><button class="button" data-open="log-in-modal">Sign in</button></li>
+            </ul>
+        </div>
+    </div>   
+    
+    
+    <div class="container">
+        <%- body %>
+    </div>
+
+    
+    
+    <script src="/whatInput/what-input.js"></script>
+    <script src="/foundation/js/foundation.js"></script>
+    <!-- <script src="../node_modules/foundation-sites/dist/js/" -->
+    <!-- <script src="../js/index.js"></script> -->  -->
+    <script>
+        
+        // console.log(renderModal);
+        
+    $(document).foundation();
+    // console.log($('#signin-modal').data());
+    $(document).ready(function(){
+        console.log($('#signin-modal').data());
+        if($('#login-modal').data().modal === true){
+            console.log($('#login-modal').data().modal)
+            $('#register-modal').foundation('open');
+            $('#login-modal').data('modal', false);
+            
+            
+        }
+        // if($('#signin-modal').data().modal === true){
+            
+        //     $('#log-in-modal2').foundation('open');
+          
+        // }
+        });
+        
+        
+    
+    </script>
+    
+</body>
+
+</html>
