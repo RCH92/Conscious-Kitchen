@@ -84,11 +84,12 @@ app.use('/foundation', express.static('node_modules/foundation-sites/dist'));
 // ====================================================================
 require("./routes/api-routes.js")(app);
 require("./routes/users.js")(app,passport);
-app.use('/', require('./routes/html-routes'));
+app.use('/', require(__dirname + '/routes/html-routes'));
 // require("./routes/html-routes.js")(app);
 // ====================================================================
 
 // sync models and start app
+
 // ====================================================================
 db.sequelize.sync({ force: true }).then(function() {
     app.listen(PORT, function() {

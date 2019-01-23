@@ -159,6 +159,7 @@ body{
   background-image: url('https://c.pxhere.com/photos/28/59/background_food_tasty_olives_wooden_background_cooking_plate_kitchen-1369805.jpg!d');
   background-size: cover;
   background-position: center;
+  z-index: 1;
 }
 .fancy{
   text-align: center;
@@ -202,4 +203,13 @@ body{
     width: 1198px;
   }
   
+}
+.aboutDiv{
+  width: 100vmax;
+  height: 100vmax;
+  background-image: url('../images/serverstoreflat.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: 2;
+  margin-top: -20px;
 }

@@ -10,7 +10,7 @@ router.get('/user/dashboard', (req, res) => res.send('Dashboard'));
 
 router.get('/user/success', (req, res) => res.render('success.ejs', {msg: 'Registration successful! Please sign in.', type: "success"}));
 router.get('/login', (req, res) => res.render('login.ejs', {msg: 'Username or password incorrect', type: "fail"}));
-
+router.get('/about', (req, res) => res.render('about.ejs') );
 
 
 
